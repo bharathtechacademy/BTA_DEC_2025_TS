@@ -6,7 +6,7 @@
 //1. if...else statement ==> When we don't know the result of condition before execution.
 //2. switch statement ==> When we know the result of condition before execution.Now, we want to choose one option among multiple
 
-// 1. if...else statement
+// 1. nested if...else statement ==> if...else statement inside another if...else statement.
 let percentage: number = 95;
 
 if (percentage >= 85) {
