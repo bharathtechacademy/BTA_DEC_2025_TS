@@ -24,3 +24,20 @@ if (percentage >= 85) {
 } else {
     console.log("Sorry Bro, You are Failed");
 }
+
+//2. switch statement ==> When we know the result of condition before execution.Now, we want to choose one option among multiple
+let env:string = "prod";
+
+switch(env){
+    case "dev":
+        console.log("Login into the applicatio with 'dev.netflix.com'");
+        break;
+    case "qa":
+        console.log("Login into the applicatio with 'qa.netflix.com'");
+        break;
+    case "prod":
+        console.log("Login into the applicatio with 'netflix.com'");
+        break;
+    default:
+        console.log("Please provide a valid environment");
+}

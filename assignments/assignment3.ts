@@ -41,6 +41,8 @@ function evaluateLoan(
         // If credit score is below 650, deny the loan
         console.log("Loan Denied: Credit score is too low.");
     }
+    
+    
 }
 
 
