@@ -36,3 +36,4 @@ while (counter > 0) {
     console.log("Refresh the page");
     counter++;
 }
+
