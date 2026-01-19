@@ -96,7 +96,7 @@ console.log("Address: ", address);
 function launchTheApplication(browserName: string , url:string):void {
     console.log("Launch the browser: " + browserName);
     console.log("Navigate to URL: " + url);
-    console.log("Application launched successfully!");
+    console.log("Application launched successfully!");    
 }
 
 function sumOfNumbers(num1: number, num2: number): number {
