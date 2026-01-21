@@ -14,7 +14,7 @@ const hikeMap: Map<string, number> = new Map();
 
 // Calculate hike for each employee and store in hikeMap
 for (const key of empData.keys()) {
-  const data = empData.get(key)!;
+  const data = empData.get(key)!;// get the array of values for the employee
   const baseSalary = data[0];
   const experience = data[1];
   const rating = data[2];
@@ -57,3 +57,5 @@ function calculateHike(
 
   return (hike / baseSalary) * 100;
 }
+
+export {};
