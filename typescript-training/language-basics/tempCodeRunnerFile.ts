@@ -1,1 +1,1 @@
-o("Bob");// Ou
+console.log(lastNumber);
