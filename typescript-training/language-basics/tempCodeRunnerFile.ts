@@ -1,1 +1,1 @@
-console.log(lastNumber);
+console.log("TypeScript contains 'script'? " + stringA.includes("script"));
