@@ -36,7 +36,7 @@ console.log(numbers); // Output: [1, 2, 3, 4, 5]
 
 //7. Add or remove one or more values within the array from a specific index. 
 console.log("7. Add or remove one or more values within the array from a specific index.");
-let removedNumbers = numbers.splice(2, 0, 10, 11);//splice(index, numberOfElementsToRemove, elementsToAdd)
+let removedNumbers = numbers.splice(2, 0, 10, 11);//splice(index, numberOfElementsToRemove, elementsToAdd...)
 console.log(numbers); // Output: [1, 2, 10, 11, 3, 4, 5]
 
 //8. Creating a new array by extracting a portion of an existing array

@@ -20,6 +20,10 @@
     "declaration": true,
     "declarationMap": true,
 
+    // Adding module configurations to allow using ES Modules in Node.js
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
