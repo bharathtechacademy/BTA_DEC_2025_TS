@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    "@types/node": "^25.2.0"
-  }
-}
