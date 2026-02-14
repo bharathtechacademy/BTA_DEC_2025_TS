@@ -33,6 +33,104 @@ test('Browser actions', async () => {
     //Check if the element is checked (for checkbox or radio button)
     await expect(element).toBeChecked();
 
+    /* =========================================================
+       BUTTON Web Element Validations
+       ========================================================= */
+
+    //locate the button element
+    let button = page.locator("button#submit");
+
+    //verify the label of the button
+    let buttonText = await button.textContent(); //if the label added as text value
+    let buttonValue = await button.getAttribute('value');//if the label added as attribute value
+
+    //click on the button
+    await button.click();
+
+    //double click
+    await button.dblclick();
+
+    //right click
+    await button.click({ button: 'right' });
+
+    //hover on the button
+    await button.hover();
+
+    //drag and drop the button
+    const target = await page.locator("#target");
+    await button.dragTo(target);
+
+    //scroll till button displayed
+    await button.scrollIntoViewIfNeeded();
+
+    //button is covered and we want to click on the hidden button
+    await button.click({ force: true });
+
+
+    /* =========================================================
+       TEXTBOX Web Element Validations
+       ========================================================= */
+
+    //locate the textbox element
+    let textbox = page.locator("input#textbox");
+
+    // clear the existing text from textbox
+    await textbox.clear();
+
+    // verify the placeholder 
+    let placeholder = textbox.getAttribute('placeholder');
+
+    // type the text with in the textbox
+    await textbox.fill('Sample Text');
+
+    // press keys like 'enter' into textbox
+    await textbox.press('Enter');
+
+    // verify the value entered into the textbox
+    await expect(textbox).toHaveValue('Sample Text');
+
+
+    /* =========================================================
+       DROPDOWN Web Element Validations
+       ========================================================= */
+
+    //locate the dopdownelement
+    let dropdown = page.locator("select#dropdown");
+
+    // select the option from dropdown
+    await dropdown.selectOption({ label: 'Option 1' }); //by label/text 
+    await dropdown.selectOption({ value: 'Option 2' }); //by value
+    await dropdown.selectOption({ index: 1 }); //by index
+
+    // verify if the dropdown is multi-select
+    let isMultiSelect = await dropdown.getAttribute('multiple') !== null;
+
+    // select the option from dropdown
+    await dropdown.selectOption({ label: 'Option 1' }); //by label/text 
+    await dropdown.selectOption({ value: 'Option 2' }); //by value
+    await dropdown.selectOption({ index: 1 }); //by index
+
+    // de-select the option from dropdown
+    await dropdown.selectOption({ label: 'Option 1' }); //by label/text 
+    await dropdown.selectOption({ value: 'Option 2' }); //by value
+    await dropdown.selectOption({ index: 1 }); //by index
+
+    // verify the selected options from dropdown
+    const selectedOption = await dropdown.inputValue();
+
+    //verify the totl options available
+    let options = dropdown.locator('option');
+
+    // verify the total options available in dropdown
+    let optionsCount = await options.count();
+
+    //Print the option text value from each and every option
+    for (let i = 0; i < optionsCount; i++) {
+        const optionText = await options.nth(i).textContent();
+        console.log(`Option ${i + 1}: ${optionText}`);
+    }
+
+
 
     //Close all pages
     await browser.close();

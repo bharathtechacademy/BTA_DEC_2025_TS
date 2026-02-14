@@ -76,8 +76,8 @@ test('Browser actions', async () => {
     //Locate the 'Services' link using XPATH  Syntax 8
     let servicesLink = page.locator("//ul[@class='leftmenu']/child::li/child::a[text()='Services']");
 
-
     //Close all pages
     await browser.close();
 
 });
+
