@@ -230,6 +230,29 @@ test('Browser actions', async () => {
    Alert Element Validations
    ========================================================= */
 
+   //locate the alert trigger element
+   const alertTrigger = page.locator("button#alertButton");
+
+   //Code to handle alert (if alert comes)
+   page.once('dialog', async dialog =>{
+
+      //Copy the message from alert 
+      console.log(dialog.message());
+
+      //Click on the OK button of the alert. 
+      dialog.accept();
+
+      //Click on the cancel button of the alert. 
+      dialog.dismiss();
+
+      //Enter some text along with "Accept" or "Dismiss". 
+      dialog.accept("Playwright Automation");
+
+   });
+
+   //click on the button and get the alert
+   alertTrigger.click();
+
    //Close all pages
    await browser.close();
 
