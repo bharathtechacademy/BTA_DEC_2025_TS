@@ -6,50 +6,62 @@ test('Validating the Parabank Application', async ({ page }) => {
     //1. Enter URL and Launch the application (https://demoqa.com/)        
     await page.goto("https://demoqa.com/");
 
+    //Maximize the browser window to a specific resolution. 
+    await page.setViewportSize({ width: 1920, height: 1080 });
+
     //2. Click on the form widget
     const formsTile = page.locator('//h5[text()="Forms"]');
-    formsTile.click();
+    await formsTile.click();
 
     //3. Click on the 'Practice form' menu
     const practiceForm = page.locator('//span[text()="Practice Form"]');
-    practiceForm.click();
+    await practiceForm.click();
+
+    //wait for the page to load
+    const pageHeading = page.locator("//h1[text()='Practice Form']");
+    await expect(pageHeading).toBeVisible({ timeout: 10000 });
+    console.log('✓ Practice Form page loaded');
 
     //4. Enter First name and Last name      
-    const firstName = page.locator('input#firstName');
-    const lastName = page.locator('input#lastName');
+    const firstName = page.locator("//input[@id='firstName']");
+    const lastName = page.locator("//input[@id='lastName']");
 
-    firstName.fill("Bharath");
-    lastName.fill("Reddy");
+    await firstName.fill("Bharath");
+    await lastName.fill("Reddy");
 
     //5. Enter Email   
-    const email = page.locator('input#userEmail');
-    email.fill("BharathTechAcademy@Gmail.com");
+    const email = page.locator("//input[@id='userEmail']");
+    await email.fill("BharathTechAcademy@Gmail.com");
 
     //6. Select Gender (Male)        
     await selectGender(page, 'Male');
 
     //7. Enter mobile number       
-    const phone = page.locator('input#userNumber');
-    phone.fill("9553220022");
+    const phone = page.locator("//input[@id='userNumber']");
+    await phone.fill("9553220022");
 
     //8. Select DOB (1-Feb-1991)  
-    selectDOB(page, "1", "February", "1991");
+    await selectDOB(page, "1", "February", "1991");
 
     //9. Search and Select Computer Science     
     await selectSubject(page, 'Computer Science');
 
     //10.Select Hobbies as Sports and Reading      
     const hobbies: string[] = ['Sports', 'Reading'];
-    await selectHobbies(page,hobbies);
+    await selectHobbies(page, hobbies);
 
     //11.Upload photo  "
-    const photoPath = "C:\\Training\\PlaywrightTrainings\\Dec_2025\\playwright-training\\files\\2.png";
+    //const photoPath = "C:\\Training\\PlaywrightTrainings\\Dec_2025\\playwright-training\\files\\2.png";
+    const photoPath = "files/2.png";
     const uploadPhoto = page.locator('input#uploadPicture');
     await uploadPhoto.setInputFiles(photoPath);
 
+    //wait for 10 seconds to visually verify the uploaded photo.
+    await page.waitForTimeout(10000);
+
     //12.Submit Details 
     const submitButton = page.locator('button#submit');
-    submitButton.click();
+    await submitButton.click();
 
 });
 
@@ -59,31 +71,35 @@ async function selectHobbies(page: any, options: string[]) {
     for (let val of options) {
         const hobby = page.locator('//label[text()="' + val + '"]');
         if (!hobby.isChecked()) {
-            hobby.click();
+            await hobby.click();
         }
     }
 }
 
 //Common method to search and select subjects. 
 async function selectSubject(page: any, subject: string) {
-    //click on input box
-    const subjectInputbox = page.locator('input.subjects-auto-complete__input');
-    subjectInputbox.click();
 
-    //enter the subject name
-    subjectInputbox.fill(subject);
+    //Click on the subject container to activate the input field
+    const subjectContainer = page.locator("//div[contains(@class,'subjects-auto-complete__input-container')]");
+    await subjectContainer.click();
+
+    // Type the subject
+    const subjectInput = page.locator("//input[@id='subjectsInput']");
+    await subjectInput.fill(subject);
 
     //select the suggestion
     const suggestion = await page.getByRole('option', { name: subject });
     await expect(suggestion).toBeVisible();
-    suggestion.click();
+
+    // Click on the suggestion to select it
+    await suggestion.click({ force: true });
 }
 
 
 //Common method to select the gender. 
 async function selectGender(page: any, gender: string) {
     const genderLabel = page.locator('//label[text()="' + gender + '"]');
-    genderLabel.click();
+    await genderLabel.click();
 }
 
 //Common method to select the date of birth

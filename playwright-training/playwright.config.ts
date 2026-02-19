@@ -23,7 +23,7 @@ export default defineConfig({
 
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
-  
+
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -32,7 +32,9 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: 'retain-on-failure',
+    screenshot: 'on',
+    video: 'on',
   },
 
   /* Configure projects for major browsers */
