@@ -1,0 +1,387 @@
+{
+  "info": {
+    "_postman_id": "fa2244a2-44b4-46bd-a0d8-ea7a45b19e0a",
+    "name": "Git API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31694517",
+    "_collection_link": "https://go.postman.co/collection/31694517-fa2244a2-44b4-46bd-a0d8-ea7a45b19e0a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create a duplicate repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code\r",
+              "pm.test(\"Verify Status Code of Duplicate Repo Request\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(422);\r",
+              "})\r",
+              "\r",
+              "//Verify the status message\r",
+              "pm.test(\"Verify Status message of Duplicate Repo Request\", function(){\r",
+              "    pm.expect(pm.response.status).to.eql(\"Unprocessable Entity\");\r",
+              "})\r",
+              "\r",
+              "//Verify the response time\r",
+              "pm.test(\"Verify Response Time of Duplicate Repo Request\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "})\r",
+              "\r",
+              "//Verify the Response Body\r",
+              "pm.test(\"Verify Response Body for Duplicate Repo Request\", function () {\r",
+              "    pm.expect(pm.response.json().message).to.eql(\"Repository creation failed.\");\r",
+              "    pm.expect(pm.response.json().errors[0].message).to.eql(\"name already exists on this account\");\r",
+              "    pm.expect(pm.response.json().status).to.eql(\"422\");\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"JMeterRepo\",\r\n    \"description\": \"Sample Duplicate Repo From Postman\",\r\n    \"private\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/user/repos",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a valid repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code\r",
+              "pm.test(\"Verify Status Code of Create Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(201);\r",
+              "})\r",
+              "\r",
+              "//Verify the status message\r",
+              "pm.test(\"Verify Status message of Create Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.status).to.eql(\"Created\");\r",
+              "})\r",
+              "\r",
+              "//Verify the response time\r",
+              "pm.test(\"Verify Response Time of Create Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "})\r",
+              "\r",
+              "//Verify the Response Body\r",
+              "pm.test(\"Verify Response Body for Create Valid Repo Request\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(pm.globals.get(\"RepoName\") );\r",
+              "    pm.expect(pm.response.json().private).to.eql(false);\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.globals.set(\"RepoName\", \"NewJmeterRepository\");"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"{{RepoName}}\",\r\n    \"description\": \"Sample Duplicate Repo From Postman\",\r\n    \"private\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/user/repos",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a valid repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code\r",
+              "pm.test(\"Verify Status Code of Get Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(200);\r",
+              "})\r",
+              "\r",
+              "//Verify the status message\r",
+              "pm.test(\"Verify Status message of Get Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.status).to.eql(\"OK\");\r",
+              "})\r",
+              "\r",
+              "//Verify the response time\r",
+              "pm.test(\"Verify Response Time of Get Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "})\r",
+              "\r",
+              "//Verify the Response Body\r",
+              "pm.test(\"Verify Response Body for Get Valid Repo Request\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(pm.globals.get(\"RepoName\") );\r",
+              "    pm.expect(pm.response.json().private).to.eql(false);\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/{{RepoName}}",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{RepoName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a valid repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code\r",
+              "pm.test(\"Verify Status Code of Update Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(200);\r",
+              "})\r",
+              "\r",
+              "//Verify the status message\r",
+              "pm.test(\"Verify Status message of Update Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.status).to.eql(\"OK\");\r",
+              "})\r",
+              "\r",
+              "//Verify the response time\r",
+              "pm.test(\"Verify Response Time of Update Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "})\r",
+              "\r",
+              "//Verify the Response Body\r",
+              "pm.test(\"Verify Response Body for Update Valid Repo Request\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(pm.globals.get(\"RepoName\") );\r",
+              "    pm.expect(pm.response.json().private).to.eql(true);\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\":true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/{{RepoName}}",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{RepoName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a valid repository for the authenticated user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code\r",
+              "pm.test(\"Verify Status Code of Delete Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.code).to.eql(204);\r",
+              "})\r",
+              "\r",
+              "//Verify the status message\r",
+              "pm.test(\"Verify Status message of Delete Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.status).to.eql(\"No Content\");\r",
+              "})\r",
+              "\r",
+              "//Verify the response time\r",
+              "pm.test(\"Verify Response Time of Delete Valid Repo Request\", function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "})\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/{{RepoName}}",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{RepoName}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

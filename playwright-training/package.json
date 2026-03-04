@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "abc-failed-tests": "npx playwright test --last-failed"
+
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,9 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.58.1",
-    "@types/node": "^25.2.0"
+    "@types/node": "^25.3.0"
+  },
+  "dependencies": {
+    "pg": "^8.18.0"
   }
 }

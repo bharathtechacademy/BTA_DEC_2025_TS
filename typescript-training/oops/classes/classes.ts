@@ -32,7 +32,7 @@
 class Employee {
 
     //properties
-    empName: string = "Bharath Reddy"; //data member
+    const empName: string = "Bharath Reddy"; //data member
     empID: number = 1234;
 
     //method

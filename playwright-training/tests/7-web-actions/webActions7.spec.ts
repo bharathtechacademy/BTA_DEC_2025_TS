@@ -1,7 +1,21 @@
-import { test, expect, chromium } from '@playwright/test';
+import { test, expect, chromium, firefox, webkit } from '@playwright/test';
 
-test('Validating the Parabank Application', async ({ page }) => {
+test('Validating the Parabank Application', async ({ }) => {
 
+    //launch the browser
+    const browser = await chromium.launch({
+        headless: false, args: ['--start-maximized',
+            '--allow-notifications',
+            '--disable-popup-blocking',
+            '--ignore-certificate-errors']
+    });
+
+
+    //create a new browser context and page
+    const context = await browser.newContext();
+
+    //create a new page
+    const page = await context.newPage();
 
     //1. Enter URL and Launch the application (https://books-pwakit.appspot.com/)        
     await page.goto("https://books-pwakit.appspot.com/");
@@ -12,15 +26,6 @@ test('Validating the Parabank Application', async ({ page }) => {
     //3.Locate the 'Shadow DOM' element and click and enter text in the search box.
     const shadowDomElement = page.locator('input[aria-label="Search Books"]');
     await shadowDomElement.fill('Playwright');
-
-    //locate the search icon and click on it to perform the search action.
-    const searchIcon = page.locator('div[class="icon"]');
-
-    //click on the search icon to perform the search action.
-    await searchIcon.click();
-
-
-   // await shadowDomElement.press('Enter');
 
     //4. wait for 10 seconds to see the search results.
     await page.waitForTimeout(10000);
