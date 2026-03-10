@@ -138,6 +138,11 @@ export class WebCommons {
         await this.scrollToElement(selector);
         await expect(this.element(selector)).toHaveAttribute(attribute, expectedValue);
     }
+
+    //Common method to verify the element is not visible
+    async verifyElementIsNotVisible(selector: string) {
+        await expect(this.element(selector)).toBeHidden();
+    }
 }
 
 
