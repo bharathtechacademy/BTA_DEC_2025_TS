@@ -44,12 +44,6 @@ export class ApiCommons {
         console.log (await this.response.text());
     }
 
-    //Method to get token for authentication
-    async getToken() {
-        let token = (await this.requestContext.get("/user/token")).json().token;
-        return token;
-    }
-
     //Method to validate status code 
     async validateStatusCode(expectedStatusCode: number) {
         const actualStatusCode = this.response.status();
