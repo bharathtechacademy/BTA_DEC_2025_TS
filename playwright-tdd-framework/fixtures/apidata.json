@@ -1,0 +1,31 @@
+{
+    "duplicateRepo": {
+        "endpoint":"/user/repos",
+        "body":{
+            "name": "JMeterRepo",
+            "description": "Sample Duplicate Repo From Postman",
+            "private": false
+        },
+        "expectedCode":422,
+        "expectedStatusMessage":"Unprocessable Entity",
+        "errorMessage":"Repository creation failed."
+    },
+    
+    "createRepo": {
+        "endpoint":"/user/repos",
+        "body":{
+            "name": "ValidNewRepo",
+            "description": "Sample Valid Repo From Postman",
+            "private": false
+        },
+        "expectedCode":201,
+        "expectedStatusMessage":"Created",
+        "name":"ValidNewRepo"
+    },
+    "deleteRepo": {
+        "endpoint":"/repos/bharathtechacademy05/ValidNewRepo",
+        "body":"",
+        "expectedCode":204,
+        "expectedStatusMessage":"No Content"
+    }
+}
