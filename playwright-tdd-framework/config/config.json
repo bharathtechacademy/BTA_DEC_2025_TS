@@ -7,9 +7,9 @@
     },
     "db": {
         "host":"localhost",
-        "port":"5432",
+        "port":5432,
         "database":"dvdrental",
-        "username":"postgres",
+        "user":"postgres",
         "password":"admin"       
     },
     "api": {

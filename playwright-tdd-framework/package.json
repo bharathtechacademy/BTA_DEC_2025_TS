@@ -10,11 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.3"
+    "@types/node": "^25.3.3",
+    "@types/pg": "^8.18.0"
   },
   "dependencies": {
     "excel": "^1.0.1",
     "pdf-parse": "^2.4.5",
+    "pg": "^8.20.0",
     "xlsx": "^0.18.5"
   }
 }
