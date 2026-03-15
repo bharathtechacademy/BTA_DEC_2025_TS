@@ -19,7 +19,7 @@ test.describe("Application Tests", () => {
 
   test('Verify Cookies Page is Launched', async ({ }) => {
     await loginPage.launchApplication();
-    await cookiesPage.verifyCookiesPageIsDisplayed();
+    await cookiesPage.verifyCookiesPageIsDisplayed();     
   });
 
   //data
