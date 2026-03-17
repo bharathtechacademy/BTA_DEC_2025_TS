@@ -29,3 +29,15 @@ module.exports = {
     publishQuiet: true
   }
 };
+
+# 5. Adding the folder structure to maintain different components of the framework. 
+    1.commons ==> To maintain the common methods related to UI, API, Database, and Load Testing related stuff 
+    2.config ==> To maintain the configuration data related to UI, API, database, and load testing 
+    3.screenshots ==> To maintain the screenshots collected during the execution process 
+    4.reports ==> To maintain the test results reports generated from the framework 
+    5.utils ==> To maintain the utility-related programs and common methods like Excel utility, database utility, PDF utility, etc. 
+    6.page-objects ==> To maintain page-wise elements and respective steps to implement page object model design pattern 
+
+    7.features ==> To maintain the cucumber feature files related to each and every functionality 
+    8.step-definitions ==> To maintain the step definitions for each and every step mentioned in the feature file 
+    9.support ==> To maintain cucumber 'hooks'and cucumber 'world' configurations 

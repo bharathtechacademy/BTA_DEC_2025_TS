@@ -1,0 +1,4 @@
+{
+    "homePageHeaderLink": "span:text-is('Application Hub')",
+    "usersLink": "span:text-is('Users')"
+}
