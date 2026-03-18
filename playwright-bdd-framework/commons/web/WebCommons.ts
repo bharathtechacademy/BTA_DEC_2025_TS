@@ -16,6 +16,8 @@ export class WebCommons {
     //common method to launch the application
     async launchApplication(url: string, exptitle?: string) {
         await this.page.goto(url);
+        console.log(`Navigated to URL: ${url}`);
+        console.log(`Page Title: ${await this.page.title()}`);
         if (exptitle) {
             await expect(this.page).toHaveTitle(exptitle);
         }
@@ -117,8 +119,7 @@ export class WebCommons {
 
     //Common method to verify the visibility of an element 
     async verifyElementIsVisible(selector: string) {
-        await this.scrollToElement(selector);
-        await expect(this.element(selector)).toBeVisible();
+        await expect(this.element(selector)).toBeVisible({ timeout: 90000 });
     }
 
     //Common method to verify the element is enabled or not

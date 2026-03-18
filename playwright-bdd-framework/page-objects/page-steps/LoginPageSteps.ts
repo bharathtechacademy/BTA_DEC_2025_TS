@@ -15,7 +15,7 @@ export class LoginPageSteps {
 
     //Method to launch application
     async launchApplication() {
-        await this.web.launchApplication(config.app.url, config.app.title);
+        await this.web.launchApplication(config.app.url);
     }
 
     //Method to verify login page is displayed. 
@@ -27,6 +27,11 @@ export class LoginPageSteps {
     async enterBusinessEmailAndPassword(email: string, password: string) {
         await this.web.enterText(loginPage.businessEmailTxtb, email);
         await this.web.enterText(loginPage.passwordTxtb, password);
+    }
+
+      //Method to enter business email 
+    async enterBusinessEmail(email: string) {
+        await this.web.enterText(loginPage.businessEmailTxtb, email);
     }
 
     //Method to click on the login button

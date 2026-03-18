@@ -15,7 +15,7 @@ class PlaywrightWorld extends World {
         super(options);
     }
 
-    initializePageObjects(options: IWorldOptions) {
+    initializePageObjects() {
         this.loginPage = new LoginPageSteps(this.page);
         this.homePage = new HomePageSteps(this.page);
         this.cookiesPage = new CookiesPageSteps(this.page);

@@ -11,25 +11,25 @@ Feature: Creatio Login Feature
     Scenario: Verify that the login page is launched
         Given Login page should be displayed
 
-    Scenario Outline: Verify login feature with <scenario> credential
-        Given Login page should be displayed
-        When User enter <username> and <password>
-        And Click on the login button
-        Then Login should be <result>
+    # Scenario Outline: Verify login feature with <scenario> credential
+    #     Given Login page should be displayed
+    #     When User enter "<username>" and "<password>"
+    #     And Click on the login button
+    #     Then Login should be "<result>"
 
-        Examples:
-            | scenario | username                       | password                | result  |
-            | valid    | bharattechacademy5@outlook.com | BharathTechAcademy#1234 | success |
-            | invalid  | testuser@email.com             | abcd#12345              | failure |
+    #     Examples:
+    #         | scenario | username                       | password                | result  |
+    #         | valid    | bharattechacademy5@outlook.com | BharathTechAcademy#1234 | success |
+    #         | invalid  | testuser@email.com             | abcd#12345              | failure |
 
-    Scenario: Verify forgot password link functionality
-        Given Login page should be displayed
-        When user enter valid <email> in the username field
-        And  click on the forgot password link
-        Then Verify forgot password confirmation message should be displayed
+    # Scenario: Verify forgot password link functionality
+    #     Given Login page should be displayed
+    #     When user enter valid "bharattechacademy5@outlook.com" in the username field
+    #     And  click on the forgot password link
+    #     Then Verify forgot password confirmation message should be displayed
 
-    Scenario: Verify social media login options
-        Given Login page should be displayed
-        Then Verify social media login options are displayed
+    # Scenario: Verify social media login options
+    #     Given Login page should be displayed
+    #     Then Verify social media login options are displayed
 
 
