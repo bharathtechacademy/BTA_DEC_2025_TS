@@ -1,0 +1,50 @@
+{
+  "2.Update the Existing repo with Valid User" : {
+    "transaction" : "2.Update the Existing repo with Valid User",
+    "sampleCount" : 200,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 373.8150000000002,
+    "medianResTime" : 358.0,
+    "minResTime" : 324.0,
+    "maxResTime" : 806.0,
+    "pct1ResTime" : 401.9,
+    "pct2ResTime" : 468.7499999999995,
+    "pct3ResTime" : 798.7400000000002,
+    "throughput" : 19.59631589261219,
+    "receivedKBytesPerSec" : 154.78812248922205,
+    "sentKBytesPerSec" : 6.54486331569665
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 400,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 385.8425000000002,
+    "medianResTime" : 362.0,
+    "minResTime" : 312.0,
+    "maxResTime" : 918.0,
+    "pct1ResTime" : 424.0,
+    "pct2ResTime" : 498.9,
+    "pct3ResTime" : 805.99,
+    "throughput" : 35.842293906810035,
+    "receivedKBytesPerSec" : 284.3721123151882,
+    "sentKBytesPerSec" : 10.430667562724015
+  },
+  "2.Get the Existing repo with Valid User" : {
+    "transaction" : "2.Get the Existing repo with Valid User",
+    "sampleCount" : 200,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 397.86999999999995,
+    "medianResTime" : 386.0,
+    "minResTime" : 312.0,
+    "maxResTime" : 918.0,
+    "pct1ResTime" : 459.70000000000005,
+    "pct2ResTime" : 587.2499999999998,
+    "pct3ResTime" : 895.4900000000005,
+    "throughput" : 18.485996857380535,
+    "receivedKBytesPerSec" : 147.31723775880394,
+    "sentKBytesPerSec" : 4.585393751733061
+  }
+}

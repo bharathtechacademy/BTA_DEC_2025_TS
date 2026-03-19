@@ -1,0 +1,14 @@
+{"createRepo": {
+        "body":{
+            "name": "{{repoName}}",
+            "description": "Sample Duplicate Repo From Postman",
+            "private": false
+        }
+    },
+    "updateRepo": {
+        "body":{
+            "private": false
+        }
+    }
+
+}

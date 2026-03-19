@@ -42,6 +42,9 @@ export class ApiCommons {
                 throw new Error('Invalid request type : ' + requestType);
         }
         console.log (await this.response.text());
+
+        //wait for 2 sec to get the response before moving to next step.
+        await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
     //Method to validate status code 

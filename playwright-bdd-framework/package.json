@@ -1,5 +1,5 @@
 {
-  "type":"module",
+  "type": "module",
   "name": "playwright-bdd-framework",
   "version": "1.0.0",
   "description": "1. change directory => cd playwright-bdd-framework\r 2. playwright : npm init playwright@latest",

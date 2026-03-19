@@ -1,6 +1,6 @@
 
-import { exec } from 'child_process';
-import fs from 'fs';
+import { exec, type ExecException } from 'node:child_process';
+import * as fs from 'node:fs';
 
 export class JMeterCommons {
 
@@ -8,7 +8,7 @@ export class JMeterCommons {
     private executeCLICommand(command: string): Promise<string> {
         
         return new Promise((resolve, reject) => {
-            exec(command, (error, stdout, stderr) => {
+            exec(command, (error: ExecException | null, stdout: string, stderr: string) => {
                 if (error) {
                     reject(error);
                     return;
@@ -23,7 +23,7 @@ export class JMeterCommons {
 
         //Update relative path from project folder to get the JMeter utilities. 
         const projectRoot = process.cwd();
-        const jmeterBasePath = `${projectRoot}/tests/performance/jmeter`;
+        const jmeterBasePath = `${projectRoot}/step-definitions/performance/jmeter`;
         const jmeterBinPath = `${jmeterBasePath}/bin/jmeter.bat`;
         const testPlanPath = `${jmeterBasePath}/testplans/${jmxFile}`;
         //get the time stamp in ddMMyyyy_HHmmss format to create unique results and report for each test run
