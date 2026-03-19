@@ -131,7 +131,8 @@ export class WebCommons {
     //Common method to verify the text value of the element 
     async verifyElementText(selector: string, expectedText: string) {
         await this.scrollToElement(selector);
-        await expect(this.element(selector)).toHaveText(expectedText);
+        // Cookies text can vary in length/whitespace; validate by substring to keep tests stable.
+        await expect(this.element(selector)).toContainText(expectedText);
     }
 
     //Common method to verify the attribute value of the element

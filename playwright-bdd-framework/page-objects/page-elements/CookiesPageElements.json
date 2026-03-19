@@ -1,5 +1,5 @@
 {
-    "cookiesHeader": "#CybotCookiebotDialogBodyContentTitle2",
+    "cookiesHeader": "#CybotCookiebotDialogBodyContentTitle",
     "cookiesContent": "#CybotCookiebotDialogBodyContentText",
     "allowAllBtn": "#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
     "allowSelectionBtn": "#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection",

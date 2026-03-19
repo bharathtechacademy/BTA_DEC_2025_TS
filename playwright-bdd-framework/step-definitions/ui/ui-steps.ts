@@ -14,7 +14,16 @@ Then('Cookies pop-up should be displayed', async function (this: CustomWorld) {
 
 //And The content of the cookies pop-up should be displayed as "abc"
 Then('The content of the cookies pop-up should be displayed as {string}', async function (this: CustomWorld, expectedContent: string) {
-    await this.cookiesPage.verifyCookiesPageContent(expectedContent);
+    await this.cookiesPage.verifyCookiesPageContent(expectedContent.trim());
+});
+
+// Handles docString version:
+// And The content of the cookies pop-up should be displayed as
+// """
+// ...
+// """
+Then('The content of the cookies pop-up should be displayed as', async function (this: CustomWorld, docString: string) {
+    await this.cookiesPage.verifyCookiesPageContent(docString.trim());
 });
 
 //And Verify cookies pop-up logos are displayed
