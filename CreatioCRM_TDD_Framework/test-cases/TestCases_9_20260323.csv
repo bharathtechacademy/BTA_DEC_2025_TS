@@ -1,0 +1,99 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,US9 - Verify login form UI elements are displayed,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Verify login form shows Business Email input, Business Password input, and LOG IN button,All required login form controls are visible and enabled for input.,,,
+,Test Case,US9 - Verify successful login with valid registered credentials,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter valid registered Business Email and corresponding valid Password,Credentials are entered successfully.,,,
+,,,6,Click LOG IN button,Authentication request is submitted.,,,
+,,,7,Verify user is redirected to Creatio home/dashboard and no login error is shown,User logs in successfully.,,,
+,Test Case,US9 - Verify required validation when Business Email is empty,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Leave Business Email blank and enter valid Password,Only Password field has value.,,,
+,,,6,Click LOG IN button,Client-side validation is triggered.,,,
+,,,7,Verify required error is displayed for Business Email and login is blocked,User cannot proceed until Business Email is provided.,,,
+,Test Case,US9 - Verify required validation when Password is empty,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter valid Business Email and leave Password blank,Only Business Email field has value.,,,
+,,,6,Click LOG IN button,Client-side validation is triggered.,,,
+,,,7,Verify required error is displayed for Password and login is blocked,User cannot proceed until Password is provided.,,,
+,Test Case,US9 - Verify invalid email format validation,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter Business Email in invalid format (example: user_at_domain.com) and enter any Password,Invalid email test data is entered.,,,
+,,,6,Click LOG IN button,Validation check is triggered.,,,
+,,,7,Verify Business Email format validation error is shown and login is blocked,User cannot proceed with invalid email format.,,,
+,Test Case,US9 - Verify boundary behavior for maximum allowed Business Email length,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter Business Email at maximum configured length and enter valid Password,Boundary email value is entered successfully.,,,
+,,,6,Click LOG IN button,Request submission or authentication validation is triggered.,,,
+,,,7,Verify no field-length validation error appears for maximum allowed value,Maximum boundary value is accepted.,,,
+,,,8,Enter Business Email exceeding maximum configured length and click LOG IN,Over-limit boundary value is submitted for validation.,,,
+,,,9,Verify field-length validation error appears and login is blocked,Values above maximum boundary are rejected.,,,
+,Test Case,US9 - Verify boundary behavior for maximum allowed Password length,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter valid Business Email and Password at maximum configured length,Boundary password value is entered successfully.,,,
+,,,6,Click LOG IN button,Request submission or authentication validation is triggered.,,,
+,,,7,Verify no field-length validation error appears for maximum allowed password length,Maximum boundary value is accepted.,,,
+,,,8,Enter Password exceeding maximum configured length and click LOG IN,Over-limit password value is submitted for validation.,,,
+,,,9,Verify field-length validation error appears and login is blocked,Values above maximum boundary are rejected.,,,
+,Test Case,US9 - Verify integration behavior for invalid credentials response,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser.
+
+Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application.
+
+URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,cookies pop-up should get displayed before the login page to take the consent from the user.,,,
+,,,4,Accept cookies consent and proceed to login page,Cookies popup closes and login page is displayed.,,,
+,,,5,Enter unregistered but valid-format Business Email and any incorrect Password,Credentials are entered successfully.,,,
+,,,6,Click LOG IN button,Authentication request is submitted to backend service.,,,
+,,,7,Verify authentication failure message is displayed and user remains on login page,Login failure is handled gracefully without navigation.,,,

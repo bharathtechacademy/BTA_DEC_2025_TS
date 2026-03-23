@@ -1,0 +1,67 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,US10 - Validate error for invalid email format,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,4,"Enter Business Email as user_at_domain.com",Business Email value is accepted for form validation check,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,5,"Enter Password as ValidPass#123",Password value is accepted for form validation check,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email format,7,"Verify Business Email field is highlighted in red and shows error Invalid email format",Field-level email format validation error is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,4,"Enter Business Email as user@invalid",Business Email value is accepted for form validation check,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,5,"Enter Password as ValidPass#123",Password value is accepted for form validation check,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate error for invalid email domain,7,"Verify Business Email field is highlighted in red and shows error Invalid email format",Field-level email format validation error is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,4,"Enter Business Email with 401 characters in valid email shape",Email value is entered,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,5,"Enter Password as ValidPass#123",Password value is accepted for form validation check,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length greater than 400,7,"Verify Business Email field is highlighted in red and shows error Invalid email format",Email length boundary validation error is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,4,"Enter Business Email with exactly 400 characters in valid email shape",Boundary email value is entered,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,5,"Enter Password as ValidPass#123",Password value is accepted for form submission,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,7,"Verify error Invalid email format is NOT shown for Business Email",Email length boundary is accepted by field validation,Creatio CRM,,Design
+,Test Case,US10 - Validate boundary for email length exactly 400,8,"Verify bottom message Invalid email or password is displayed for unregistered credentials",Authentication error appears at bottom without email format error,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,4,"Enter Business Email as qa.user@example.com",Business Email is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,5,"Enter Password with 101 characters",Password boundary value is entered,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length greater than 100,7,"Verify Password field is highlighted in red and shows error Invalid value. Value must contain up to 100 characters",Password length validation error is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,4,"Enter Business Email as qa.user@example.com",Business Email is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,5,"Enter Password with exactly 100 characters",Boundary password value is entered,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,6,Click LOG IN button,Form submission is attempted,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,7,"Verify Password length error is NOT shown",Password boundary is accepted by field validation,Creatio CRM,,Design
+,Test Case,US10 - Validate password max length exactly 100,8,"Verify bottom message Invalid email or password is displayed for unregistered credentials",Authentication error appears at bottom without password length error,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,4,"Enter Business Email as unknown.user@example.com",Business Email is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,5,"Enter Password as WrongPass#123",Password is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,6,Click LOG IN button,Authentication request is sent,Creatio CRM,,Design
+,Test Case,US10 - Validate invalid username and password authentication error,7,"Verify bottom error message Invalid email or password is displayed",Authentication failure error is shown at bottom of page,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,4,"Enter a registered Business Email from test environment",Registered email is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,5,"Enter corresponding valid Password with up to 100 characters",Registered password is entered successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,6,Click LOG IN button,Authentication request is sent,Creatio CRM,,Design
+,Test Case,US10 - Validate successful login with valid credentials,7,"Verify user is redirected to Creatio home/dashboard and no login error is shown",Login succeeds and application home page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,1,Launch Google Chrome browser,Chrome browser launches successfully,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,2,"Navigate to https://accounts.creatio.com/login/alm",Creatio login page is displayed,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,3,"On cookies consent pop-up, click Allow all",Cookies pop-up closes and login form is usable,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,4,"Enter Business Email as abc and click LOG IN",Email format validation is triggered,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,5,"Verify Business Email error Invalid email format is shown",Field-level error appears,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,6,"Replace Business Email with unknown.user@example.com and enter Password as WrongPass#123",Credentials are updated to valid format but invalid account,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,7,Click LOG IN button again,Second authentication request is sent,Creatio CRM,,Design
+,Test Case,US10 - Validate transition from field validation to auth validation,8,"Verify Invalid email format is cleared and bottom error Invalid email or password is displayed",Validation flow correctly transitions from format check to authentication check,Creatio CRM,,Design
