@@ -2,3 +2,6 @@
 .env
 .env.local
 .env.*.local
+
+# Local Playwright MCP / IDE tooling output
+.playwright-mcp/
