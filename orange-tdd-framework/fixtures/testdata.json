@@ -1,0 +1,36 @@
+[
+    {
+        "testName": "Verify all menu items in home page",
+        "data": {
+            "expectedMenuItems": [
+                "Admin",
+                "PIM",
+                "Leave",
+                "Time",
+                "Recruitment",
+                "My Info",
+                "Performance",
+                "Dashboard",
+                "Directory",
+                "Maintenance",
+                "Claim",
+                "Buzz"
+            ]
+        }
+    },
+    {
+        "testName": "Verify Login",
+        "data": [
+            {
+                "scenario": "valid",
+                "username": "Admin",
+                "password": "admin123"
+            },
+            {
+                "scenario": "invalid",
+                "username": "InvalidUser",
+                "password": "InvalidPass"
+            }
+        ]
+    }
+]

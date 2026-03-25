@@ -1,0 +1,8 @@
+{
+    "loginPageTitle": "h5.orangehrm-login-title",
+    "usernameTxtb": "input[name='username']",
+    "passwordTxtb": "input[name='password']",
+    "loginBtn": "button.orangehrm-login-button",
+    "forgotPasswordLink": "p.orangehrm-login-forgot-header",
+    "loginErrorMsg": "div.oxd-alert--error"
+}

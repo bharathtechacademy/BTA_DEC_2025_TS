@@ -1,0 +1,9 @@
+{
+    "dashboardHeader": "h6.oxd-topbar-header-breadcrumb-module",
+    "sideMenuItems": ".oxd-main-menu-item span",
+    "userDropdownTab": ".oxd-userdropdown-tab",
+    "userDropdownName": "p.oxd-userdropdown-name",
+    "logoutLink": "a.oxd-userdropdown-link:has-text('Logout')",
+    "searchMenuInput": "input.oxd-input--active[placeholder='Search']",
+    "sidePanel": ".oxd-sidepanel-body"
+}
