@@ -15,7 +15,11 @@ test.describe('DB  tests', () => {
        const data =  await db.getData("Select film_id,title,description from Film order by film_id asc limit 10");
     //   console.log(data); //print all the rows. 
     //    console.log(data[4]);//print the 5 row data
-        console.log(data[4].title);//print the 5 row data
+        const fifthRow = data[4];
+        if (!fifthRow) {
+            throw new Error('Expected at least 5 rows from DB query');
+        }
+        console.log(fifthRow.title);//print the 5 row data
     });
 
 });

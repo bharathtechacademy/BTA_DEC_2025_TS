@@ -12,6 +12,8 @@ let cookiesPage: CookiesPageSteps;
 test.describe("Application Tests", () => {
 
   test.beforeEach(async ({ page }) => {
+    //adding view port size at the start of the test
+    await page.setViewportSize({ width: 1920, height: 1080 });
     loginPage = new LoginPageSteps(page);
     homePage = new HomePageSteps(page);
     cookiesPage = new CookiesPageSteps(page);

@@ -3,7 +3,7 @@ import config from '../../config/config.json' with {type :'json'};
 
 export class DBCommons {
 
-    async getData(query :string) : Promise<Array<Record<string,string>>>{
+    async getData(query :string) : Promise<Array<Record<string,any>>>{
 
         //create a new client instance configuration 
         const client = new Client ({
