@@ -18,7 +18,7 @@ export class LoginPageSteps {
     }
 
     async verifyLoginPageIsDisplayed() {
-        await this.web.verifyElementIsVisible(loginPage.loginPageTitle);
+        await this.web.verifyElementIsVisible(loginPage.loginBtn);
     }
 
     async enterUsernameAndPassword(username: string, password: string) {
